@@ -21,9 +21,9 @@ void tests() {
 
 //    variadic_template_test();
 
-//    function_bind_test();
+    function_bind_test();
 
-    call_once_test();
+//    call_once_test();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }

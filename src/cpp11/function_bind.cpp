@@ -15,11 +15,63 @@
 
 namespace cpp11 {
 
-void example_from_cpp_reference();
+static void example_from_cpp_reference();
+static void placeholder_test();
+
 
 void function_bind_test() {
-    example_from_cpp_reference();
+//    example_from_cpp_reference();
 
+    placeholder_test();
+}
+
+static auto add_f(int a, float b, double c) {
+    Log("%d, %f, %f", a, b, c);
+    return a + b + c;
+}
+
+static void placeholder_test() {
+    Log("add 3 data");
+    {
+        auto sum = add_f(1, 2.0, 3.0);
+        Log("sum:%f", sum);
+    }
+
+    Log("\nassign add_f to std::function");
+    {
+        std::function<double(int, float, double )> f = add_f;
+        auto sum = f(1, 2.0, 3.0);
+        Log("sum:%f", sum);
+    }
+
+    Log("\nassign std::bind result to std::function");
+    {
+        std::function<double(int, float, double)> f = std::bind(add_f, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+        auto sum = f(1, 2.0, 3.0);  // 1, 2.0, 3.0
+        Log("sum:%f", sum);
+    }
+
+    Log("\nassign std::bind one argument result to std::function");
+    {
+        std::function<double(float, double)> f_1 = std::bind(add_f, 1, std::placeholders::_1, std::placeholders::_2);
+        auto sum = f_1(2.0, 3.0);  // 1, 2.0, 3.0
+        Log("sum:%f", sum);  // 6.0
+    }
+
+    Log("\nassign std::bind two argument result to std::function");
+    {
+        auto f_1_2 = std::bind(add_f, 1, 11.0, std::placeholders::_1);
+        auto sum = f_1_2(3.0);  // 1, 11.0, 3.0
+        Log("sum:%f", sum);  // 15.0
+    }
+
+    Log("\nassign std::bind one argument result to std::function and re-arrange argument");
+    {
+        // the placeholders::_3 argument passed before placeholders::_2
+        auto f = std::bind(add_f, std::placeholders::_1, std::placeholders::_3, std::placeholders::_2);
+        auto sum = f(1, 2.0, 3.0);  // 1, 3.0, 2.0, different from the '1, 2.0, 3.0' output above.
+        Log("sum:%f", sum);  // 6.0
+    }
 }
 
 
