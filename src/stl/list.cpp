@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <list>
+#include <algorithm>
 
 
 static void basic_test() {

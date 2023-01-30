@@ -5,6 +5,8 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <algorithm>
+#include <functional>
 
 
 class Wallet {

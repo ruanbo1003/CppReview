@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "comm/log.h"
 
 
@@ -89,6 +90,7 @@ void declare_vec() {
     {
         std::vector<int> v = {1, 2, 3};
         std::reverse(v.begin(), v.end());
+
         log_vec(v, "v");  // 3 2 1
     }
 

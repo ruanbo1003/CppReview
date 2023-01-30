@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <algorithm>
 
 
 void stl_for_each() {

@@ -7,6 +7,7 @@
 #include <random>
 #include <thread>
 #include <unistd.h>
+#include <functional>
 
 /*
  * std::condition_variable
