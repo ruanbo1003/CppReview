@@ -36,9 +36,9 @@ void tests() {
 
 //    type_alias_test();
 
-//    smart_pointer_test();
+    smart_pointer_test();
 
-    memory_model_test();
+//    memory_model_test();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }

@@ -10,10 +10,13 @@
 #include "stl/entry.h"
 #include "lambda/entry.h"
 #include "threads/entry.h"
+#include "codeanalysis/entry.h"
 
 
 void entry() {
-    cpp11::tests();
+    code_analysis::tests();
+
+//    cpp11::tests();
 
 //    lambda_test();
 

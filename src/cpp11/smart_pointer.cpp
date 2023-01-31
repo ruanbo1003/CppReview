@@ -117,6 +117,12 @@ static void unique_ptr_test() {
         std::unique_ptr<TestPointer1> p(new TestPointer1("access raw pointer"));
         class_reference_parameter(*p);
     }
+
+    Log("\nuse std::make_unique to create a unique_ptr");
+    {
+        std::unique_ptr<TestPointer1> p = std::make_unique<TestPointer1>(TestPointer1("make_unique"));
+        p->display();
+    }
 }
 
 
@@ -126,9 +132,9 @@ static void weak_ptr_test();
 void smart_pointer_test() {
 //    unique_ptr_test();
 
-//    shared_ptr_test();
+    shared_ptr_test();
 
-    weak_ptr_test();
+//    weak_ptr_test();
 }
 
 static void shared_ptr_as_parameter(const std::shared_ptr<TestPointer1>& p) {
@@ -252,6 +258,12 @@ static void shared_ptr_test() {
         p1->set_next(p2);
         p2->set_next(p1);
     }  // because p1 and p2 is circular reference, no destructor call when go out of scope.
+
+    Log("\nuse std::make_shared_ptr to create a std::shared_ptr");
+    {
+        std::shared_ptr<TestPointer1> p = std::make_shared<TestPointer1>(TestPointer1("std::make_shared"));
+        p->display();
+    }
 }
 
 static void weak_ptr_test() {
