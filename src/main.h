@@ -14,9 +14,9 @@
 
 
 void entry() {
-    code_analysis::tests();
+//    code_analysis::tests();
 
-//    cpp11::tests();
+    cpp11::tests();
 
 //    lambda_test();
 

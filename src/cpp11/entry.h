@@ -19,6 +19,7 @@ void type_inference_test();
 void type_alias_test();
 void smart_pointer_test();
 void memory_model_test();
+void unordered_container_test();
 
 
 void tests() {
@@ -36,9 +37,11 @@ void tests() {
 
 //    type_alias_test();
 
-    smart_pointer_test();
+//    smart_pointer_test();
 
 //    memory_model_test();
+
+    unordered_container_test();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }
