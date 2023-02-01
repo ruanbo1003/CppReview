@@ -15,11 +15,14 @@ void variadic_template_test();
 void function_bind_test();
 void call_once_test();
 void thread_test();
+void thread_local_test();
 void type_inference_test();
 void type_alias_test();
 void smart_pointer_test();
 void memory_model_test();
 void unordered_container_test();
+void array_test();
+void constexpr_test();
 
 
 void tests() {
@@ -33,6 +36,8 @@ void tests() {
 
 //    thread_test();
 
+//    thread_local_test();
+
 //    type_inference_test();
 
 //    type_alias_test();
@@ -41,7 +46,11 @@ void tests() {
 
 //    memory_model_test();
 
-    unordered_container_test();
+//    unordered_container_test();
+
+//    array_test();
+
+    constexpr_test();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }

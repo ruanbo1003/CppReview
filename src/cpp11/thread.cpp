@@ -76,7 +76,10 @@ void create_vector_of_threads() {
 
     Log("\nstd::thread object is only movable, not copyable, not assignable");
     {
-        
+        std::thread t1;
+        // std::thread t2(t1);  //error: Calling a private constructor of class 'std::thread'
+        //std::thread t3;
+        //t3 = t1;  // error: 'operation=' is a private member of 'std::thread'
     }
 
 
