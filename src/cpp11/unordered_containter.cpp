@@ -49,6 +49,11 @@ static void unordered_multimap_test() {
         Log("mm[%d]=%s", each.first, each.second.c_str());
     }
 
+    auto equal_it = mm.equal_range(1);
+    for(auto it=equal_it.first; it!=equal_it.second; it++) {
+        Log("mm[%d]=%s", it->first, it->second.c_str());
+    }
+
 }
 
 static void unordered_set_test() {
@@ -87,6 +92,11 @@ static void unordered_set_test() {
         } else {
             Log("not found");
         }
+
+        auto equal_it = ms.equal_range(1);
+        for(auto it=equal_it.first; it!=equal_it.second; it++) {
+            LogLine("%d ", *it);
+        }  // 1 1
     }
 }
 
