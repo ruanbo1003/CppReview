@@ -6,6 +6,8 @@
 #define CPPREVIEW_MAIN_H
 
 #include "cpp11/entry.h"
+#include "cpp14/entry.h"
+
 #include "syntax/entry.h"
 #include "stl/entry.h"
 #include "lambda/entry.h"
@@ -16,7 +18,12 @@
 void entry() {
 //    code_analysis::tests();
 
-    cpp11::tests();
+    // modern C++
+    {
+//        cpp11::tests();
+        cpp14::tests();
+    }
+
 
 //    lambda_test();
 

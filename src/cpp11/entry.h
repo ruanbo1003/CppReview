@@ -23,6 +23,7 @@ void memory_model_test();
 void unordered_container_test();
 void array_test();
 void constexpr_test();
+void literal_test();
 
 
 void tests() {
@@ -50,7 +51,9 @@ void tests() {
 
 //    array_test();
 
-    constexpr_test();
+//    constexpr_test();
+
+    literal_test();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }
