@@ -13,6 +13,7 @@ namespace cpp14 {
 void return_type_deduction();
 void lambda_test();
 void template_test();
+void separator_test();
 
 
 void tests() {
@@ -20,7 +21,9 @@ void tests() {
 
 //    lambda_test();
 
-    template_test();
+//    template_test();
+
+    separator_test();
 
     Log("\nend of C++ 14 tests");
 }
