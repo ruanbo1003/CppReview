@@ -4,8 +4,12 @@
 
 #include "comm/log.h"
 
-
 namespace cpp14 {
+
+/*
+ * use single quotes(') to separator digit, to make the
+ * digit more readable.
+ */
 
 void separator_test() {
     // i1 and i2 have the same value.
