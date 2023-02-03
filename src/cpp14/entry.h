@@ -19,11 +19,11 @@ void separator_test();
 void tests() {
 //    return_type_deduction();
 
-//    lambda_test();
+    lambda_test();
 
 //    template_test();
 
-    separator_test();
+//    separator_test();
 
     Log("\nend of C++ 14 tests");
 }
