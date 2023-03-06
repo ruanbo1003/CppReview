@@ -7,6 +7,9 @@
 
 #include "comm/log.h"
 
+/*
+ *  https://en.cppreference.com/w/cpp/14
+ */
 
 namespace cpp14 {
 
@@ -14,16 +17,19 @@ void return_type_deduction();
 void lambda_test();
 void template_test();
 void separator_test();
+void exchange_test();
 
 
 void tests() {
 //    return_type_deduction();
 
-    lambda_test();
+//    lambda_test();
 
 //    template_test();
 
 //    separator_test();
+
+    exchange_test();
 
     Log("\nend of C++ 14 tests");
 }

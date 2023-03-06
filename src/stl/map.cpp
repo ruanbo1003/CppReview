@@ -7,6 +7,7 @@
 #include <map>
 #include "comm/log.h"
 
+namespace stl {
 
 class MapItem {
 private:
@@ -55,3 +56,5 @@ void map_test() {
 //    MapItem item2(1, name);
 //    std::cout << item2;
 }
+
+}  // end of namespace

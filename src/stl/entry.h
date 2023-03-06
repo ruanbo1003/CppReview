@@ -7,10 +7,12 @@
 
 #include <iostream>
 
+namespace stl {
 
 void vector_test();
 void list_test();
 void map_test();
+void any_test();
 
 
 void stl_tests() {
@@ -18,9 +20,12 @@ void stl_tests() {
 
 //    list_test();
 
-    map_test();
+//        map_test();
+
+    any_test();
 
     std::cout << "\nend of stl tests" << std::endl;
+    }
 }
 
 #endif //CPPREVIEW_STL_ENTRY_H

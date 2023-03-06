@@ -114,7 +114,7 @@ static void stl_memory_acquire_release() {
 
     std::thread t_receiver(
         [&]() -> void {
-            while(!ready.load(std::memory_order_acquire));
+            while(!ready.load(std::memory_order_acquire)){};
 
             Log("data:%d, var:%d", data, var.load());  // always 42, 100
         }
