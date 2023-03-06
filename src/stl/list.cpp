@@ -6,6 +6,7 @@
 #include <list>
 #include <algorithm>
 
+namespace stl {
 
 static void basic_test() {
     {
@@ -178,3 +179,5 @@ void list_test() {
     list_class_object_element_test();
 
 }
+
+}  // end of namespace

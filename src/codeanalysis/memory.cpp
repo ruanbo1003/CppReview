@@ -11,7 +11,7 @@ void memory_problem_test() {
     int *array = new int[10];
     delete [] array;
 
-    Log("array[1]:", array[1]);
+    Log("array[1]:%d", array[1]);
 }
 
 } // end of namespace

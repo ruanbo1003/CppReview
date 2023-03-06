@@ -9,6 +9,8 @@
 #include "comm/log.h"
 
 
+namespace stl {
+
 void declare_vec() {
     std::vector<int> v;
     for(int i=0; i<5; i++) {
@@ -230,3 +232,5 @@ void vector_test() {
 
     add_element_to_vector();
 }
+
+}  // end of namespace
