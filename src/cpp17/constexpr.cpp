@@ -7,9 +7,13 @@
 namespace cpp17 {
 
 static void if_constexpr();
+static void lambda_constexpr();
+
 
 void constexpr_test() {
-    if_constexpr();
+//    if_constexpr();
+
+    lambda_constexpr();
 
 }
 
@@ -26,6 +30,12 @@ static void if_constexpr() {
     is_ok<true>(); // ok
 
     is_ok<false>(); // not-ok
+}
+
+static void lambda_constexpr() {
+    constexpr auto l1 = [](int n) {return  n * n; };
+    cout << l1(2) << endl;  // 4
+    cout << l1(3) << endl;  // 9
 }
 
 
