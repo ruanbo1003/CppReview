@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 
 //void Log(const char *str);
 
@@ -17,7 +19,7 @@
 
 
 template<class T>
-void log_vec(const std::vector<T>& vec, const char* name) {
+void log_vec(const std::vector<T>& vec, const char* name="") {
     std::cout << name << ":";
     for(auto &each : vec) {
         std::cout << each << " ";

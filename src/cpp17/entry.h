@@ -12,13 +12,23 @@ namespace cpp17 {
 void constexpr_test();
 void structure_binding_test();
 void condition_initialize_test();
+void namespace_test();
+void fold_expr_test();
+void file_system_test();
+
 
 void tests() {
 //    constexpr_test();
 
 //    structure_binding_test();
 
-    condition_initialize_test();
+//    condition_initialize_test();
+
+//    namespace_test();
+
+//    fold_expr_test();
+
+    file_system_test();
 
     Log("end of c++ 17 test");
 }

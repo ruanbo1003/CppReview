@@ -7,12 +7,14 @@
 
 #include "cpp11/entry.h"
 #include "cpp14/entry.h"
-
+#include "cpp17/entry.h"
 #include "syntax/entry.h"
 #include "stl/entry.h"
 #include "lambda/entry.h"
 #include "threads/entry.h"
 #include "codeanalysis/entry.h"
+
+#include "leetcode/head.h"
 
 
 void entry() {
@@ -21,17 +23,20 @@ void entry() {
     // modern C++
     {
 //        cpp11::tests();
-        cpp14::tests();
+//        cpp14::tests();
+        cpp17::tests();
     }
 
 
 //    lambda_test();
 
-//    stl_tests();
+//    stl::tests();
 
 //    syntax_tests();
 
 //    thread_tests();
+
+//    leetcode::tests();
 }
 
 #endif //CPPREVIEW_MAIN_H
