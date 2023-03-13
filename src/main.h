@@ -24,7 +24,7 @@ void entry() {
     {
 //        cpp11::tests();
 //        cpp14::tests();
-        cpp17::tests();
+//        cpp17::tests();
     }
 
 
@@ -34,7 +34,7 @@ void entry() {
 
 //    syntax_tests();
 
-//    thread_tests();
+    thread_tests();
 
 //    leetcode::tests();
 }
