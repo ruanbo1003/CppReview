@@ -12,6 +12,7 @@ void basic_tests();
 void race_condition_tests();
 void mutex_tests();
 void condition_variable_tests();
+void shared_mutex_lock_test();
 
 
 void thread_tests() {
@@ -21,7 +22,9 @@ void thread_tests() {
 
 //    mutex_tests();
 
-    condition_variable_tests();
+//    condition_variable_tests();
+
+    shared_mutex_lock_test();
 
     std::cout << "\nend of thread tests" << std::endl;
 }
