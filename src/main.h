@@ -14,6 +14,7 @@
 #include "threads/entry.h"
 #include "codeanalysis/entry.h"
 #include "ipc/head.h"
+#include "libs/head.h"
 
 
 void entry() {
@@ -35,7 +36,9 @@ void entry() {
 
 //    thread_tests();
 
-    ipc::tests();
+//    ipc::tests();
+
+    libs();
 }
 
 #endif //CPPREVIEW_MAIN_H
