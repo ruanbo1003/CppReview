@@ -13,8 +13,8 @@
 #include "lambda/entry.h"
 #include "threads/entry.h"
 #include "codeanalysis/entry.h"
-
-#include "leetcode/head.h"
+#include "ipc/head.h"
+#include "libs/head.h"
 
 
 void entry() {
@@ -34,9 +34,11 @@ void entry() {
 
 //    syntax_tests();
 
-    thread_tests();
+//    thread_tests();
 
-//    leetcode::tests();
+//    ipc::tests();
+
+    libs();
 }
 
 #endif //CPPREVIEW_MAIN_H
