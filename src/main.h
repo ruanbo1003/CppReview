@@ -22,7 +22,7 @@ void entry() {
 
     // modern C++
     {
-//        cpp11::tests();
+        cpp11::tests();
 //        cpp14::tests();
 //        cpp17::tests();
     }
@@ -38,7 +38,7 @@ void entry() {
 
 //    ipc::tests();
 
-    libs();
+//    libs();
 }
 
 #endif //CPPREVIEW_MAIN_H

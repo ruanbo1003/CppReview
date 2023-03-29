@@ -1,6 +1,9 @@
 ## hiredis 
 * download and install
   * https://github.com/redis/hiredis
+      ```shell
+      wget https://github.com/redis/hiredis/archive/refs/tags/v1.1.0.zip
+      ```
   * make
     ```shell
     [~/Downloads/hiredis-1.1.0] $make
