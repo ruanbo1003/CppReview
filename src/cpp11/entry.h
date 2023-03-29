@@ -5,10 +5,10 @@
 #ifndef CPPREVIEW_CPP11_ENTRY_H
 #define CPPREVIEW_CPP11_ENTRY_H
 
-namespace cpp11 {
-
 #include <iostream>
+#include "rvalue/head.h"
 
+namespace cpp11 {
 
 void functor_test();
 void variadic_template_test();
@@ -53,7 +53,9 @@ void tests() {
 
 //    constexpr_test();
 
-    literal_test();
+//    literal_test();
+
+    rvalue::tests();
 
     std::cout << "end of cpp11::tests()" << std::endl;
 }
