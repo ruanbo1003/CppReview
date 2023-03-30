@@ -15,6 +15,7 @@
 #include "codeanalysis/entry.h"
 #include "ipc/head.h"
 #include "libs/head.h"
+#include "templates/head.h"
 
 
 void entry() {
@@ -22,11 +23,12 @@ void entry() {
 
     // modern C++
     {
-        cpp11::tests();
+//        cpp11::tests();
 //        cpp14::tests();
 //        cpp17::tests();
     }
 
+    templates::tests();
 
 //    lambda_test();
 
