@@ -2,6 +2,7 @@
 // Created by 阮波 on 2023/3/7.
 //
 #include "comm/log.h"
+#include <tuple>
 
 /*
  * apply: since c++17
