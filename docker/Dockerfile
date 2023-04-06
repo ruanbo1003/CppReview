@@ -9,6 +9,7 @@ ADD . /app/build
 # delete cached folder, used when build in local machine.
 RUN rm -rf /app/build/cmake-build-*
 
+
 # create the cmake build folder
 RUN mkdir -p /app/build/cmake-build-release
 

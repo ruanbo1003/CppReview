@@ -13,6 +13,3 @@
   ```
   docker run -it --rm cpp_review_app:latest
   ```
-  
-
-

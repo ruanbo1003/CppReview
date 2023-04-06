@@ -3,6 +3,7 @@
 //
 
 #include "comm/log.h"
+#include <memory>
 
 
 namespace cpp14 {
