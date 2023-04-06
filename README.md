@@ -1,4 +1,3 @@
-## tests of cpp
 
 ### run in docker
 - build base image to reduce the build time
