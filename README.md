@@ -1,5 +1,6 @@
 
-### run in docker
+## run
+### docker
 - build base image to reduce the build time
   ```
   docker build -t cpp_review_base:latest -f docker/Dockerfile-base .
@@ -11,4 +12,8 @@
 - run the built images
   ```
   docker run -it --rm cpp_review_app:latest
+  ```
+### shell
+  ```
+    ./run.sh
   ```
