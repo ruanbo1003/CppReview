@@ -16,6 +16,7 @@
 #include "ipc/head.h"
 #include "libs/head.h"
 #include "templates/head.h"
+#include "nets/head.h"
 
 
 void entry() {
@@ -28,7 +29,7 @@ void entry() {
 //        cpp17::tests();
     }
 
-    templates::tests();
+//    templates::tests();
 
 //    lambda_test();
 
@@ -39,6 +40,8 @@ void entry() {
 //    thread_tests();
 
 //    ipc::tests();
+
+    nets::tests();
 
 //    libs();
 }
