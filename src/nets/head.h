@@ -8,9 +8,13 @@
 namespace nets {
 
 void tcp_server();
+void reuseaddr();
+
 
 void tests() {
-    tcp_server();
+//    tcp_server();
+
+    reuseaddr();
 
 }
 
