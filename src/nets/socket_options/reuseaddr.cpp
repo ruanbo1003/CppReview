@@ -7,6 +7,14 @@
 
 #include "comm/log.h"
 
+/*
+ * MSL: Maximum Segment Life
+ * OSX:
+ *      net.inet.tcp.msl = 15000(default)
+ *      net.inet.tcp.fin_timeout = 600000(default)
+ *
+ *      update e.g: sudo sysctl -w net.inet.tcp.msl=20000
+ */
 
 namespace nets {
 
@@ -66,13 +74,24 @@ static int tcp_listen(const char* ip, int port, bool reuse) {
 
 /*
  * do not set SO_REUSEADDR.
- * listen on 127.0.0.1:9901, close, sleep 5s, listen again
+ *  1. server listen on 127.0.0.1:9902
+ *  2. a client connect to 127.0.0.1:9902
+ *  3. server accept the connection
+ *  4. server close the connection
+ *  5. server close itself
+ *  6. sleep 5-seconds
+ *  7. server listen on 127.0.0.1:9902 again
+ *
+ *  result: is_reuse = true: OK
+ *          is_reuse = false: Address already in use
+ *
  */
 static void reuseaddr_case_1() {
     const char* ip = "127.0.0.1";
     const int port = 9902;
+    const bool is_reuse = false;
 
-    int sock_fd_1 = tcp_listen(ip, port, false);
+    int sock_fd_1 = tcp_listen(ip, port, is_reuse);
     Log("sock_fd_1:%d", sock_fd_1);
     if(sock_fd_1 == -1) {
         return;
@@ -86,13 +105,18 @@ static void reuseaddr_case_1() {
     }
     Log("client fd:%d", client_fd);
 
-    close(client_fd);  // server close client connection
+    int conn_fd = accept(sock_fd_1, NULL, NULL);
+    Log("new connection fd:%d", conn_fd);
+    if(conn_fd > 0) {
+        close(conn_fd);
+    }
+//    close(client_fd);  // server close client connection
 
     close(sock_fd_1);
-    sleep(5);  // sleep 5-seconds
+    sleep(4);  // sleep 5-seconds
 
-    int sock_fd_2 = tcp_listen(ip, port, false);
-    Log("sock_fd_2:%d", sock_fd_2);
+    int sock_fd_2 = tcp_listen(ip, port, is_reuse);
+    Log("sock_fd_2:%d f", sock_fd_2);
     if(sock_fd_2 == -1) {
         Log("listen again - failed");
         return;
