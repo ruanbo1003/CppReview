@@ -14,11 +14,7 @@
   docker run -it --rm cpp_review_app:latest
   ```
 ### shell
-  1. first build the base docker image to reduce build time
-  ```
-    docker build -t cpp_review_base:latest -f docker/Dockerfile-base .
-  ```
-  2. run script
+  run script
   ```
     ./run.sh
   ```
