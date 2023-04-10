@@ -4,6 +4,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <strings.h>  // bzero()
 
 #include "comm/log.h"
 
@@ -119,6 +120,7 @@ static void reuseaddr_case_1() {
     Log("sock_fd_2:%d f", sock_fd_2);
     if(sock_fd_2 == -1) {
         Log("listen again - failed");
+        Log("=== this is expected - great ===")
         return;
     }
 

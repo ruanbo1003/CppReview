@@ -4,6 +4,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include "comm/log.h"
+#include <strings.h>
 
 
 namespace nets {
