@@ -9,8 +9,9 @@ namespace nets {
 
 void tcp_server();
 void reuse_addr();
-void reuse_port();
 void buf_size();
+void reuse_port();
+void reuse_port_multi_process();
 
 
 void tests() {
@@ -18,10 +19,10 @@ void tests() {
 
 //    reuse_addr();
 
-    reuse_port();
-
     buf_size();
 
+    reuse_port();
+    reuse_port_multi_process();
 }
 
 }

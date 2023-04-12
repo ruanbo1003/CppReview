@@ -14,7 +14,7 @@ static int tcp_listen(const char* ip, int port, bool reuse) {
     int sock_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(sock_fd < 0) {
         Log("socket() failed:%d", errno);
-        perror(NULL);
+        //perror(NULL);
         return -1;
     }
 
@@ -27,7 +27,7 @@ static int tcp_listen(const char* ip, int port, bool reuse) {
         int ret = setsockopt(sock_fd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on));
         if(ret == -1) {
             Log("setsockopt() failed:%d", errno);
-            perror(NULL);
+            //perror(NULL);
             close(sock_fd);
             return -1;
         }
@@ -42,7 +42,7 @@ static int tcp_listen(const char* ip, int port, bool reuse) {
     int ret = ::bind(sock_fd, (struct sockaddr*)&addr, sizeof(addr));
     if(ret == -1) {
         Log("bind socket[%d] failed:%d", sock_fd, errno);
-        perror(NULL);
+        //perror(NULL);
         close(sock_fd);
         return -1;
     }
@@ -50,7 +50,7 @@ static int tcp_listen(const char* ip, int port, bool reuse) {
     ret = listen(sock_fd, 64);
     if(ret == -1) {
         Log("listen [%d] failed:%d", sock_fd, errno);
-        perror(NULL);
+        //perror(NULL);
         close(sock_fd);
         return -1;
     }
