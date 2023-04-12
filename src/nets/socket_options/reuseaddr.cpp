@@ -128,7 +128,7 @@ static void reuseaddr_case_1() {
 
     close(sock_fd_2);
 }
-void reuseaddr() {
+void reuse_addr() {
     reuseaddr_case_1();
 
 }
