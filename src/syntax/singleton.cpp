@@ -58,7 +58,7 @@ private:
 
 private:
     Singleton2() : _data(0) {
-        std::cout << "Singleton2()" << std::endl;
+//        std::cout << "Singleton2()" << std::endl;
     }
 
 public:
