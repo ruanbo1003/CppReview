@@ -8,13 +8,19 @@
 namespace nets {
 
 void tcp_server();
-void reuseaddr();
+void reuse_addr();
+void reuse_port();
+void buf_size();
 
 
 void tests() {
 //    tcp_server();
 
-    reuseaddr();
+//    reuse_addr();
+
+    reuse_port();
+
+    buf_size();
 
 }
 

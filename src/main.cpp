@@ -6,7 +6,7 @@
 int main() {
     entry();
 
-    std::cout << "end of main" << std::endl;
+    std::cout << std::endl << "end of main" << std::endl;
 
     return 0;
 }
