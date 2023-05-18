@@ -14,7 +14,7 @@
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
     ```
 * LeakSanitizer(LSan): detects memory leaks
-    + -fsanitize=lead
+    + -fsanitize=leak
 * ThreadSanitizer(TSan): detects data races and deadlocks for C++ and Go
     + -fsanitize=thread
 * MemorySanitizer(MSan): detects use of un-initialized memory

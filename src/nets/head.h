@@ -12,17 +12,20 @@ void reuse_addr();
 void buf_size();
 void reuse_port();
 void reuse_port_multi_process();
+void select_tcp_server();
 
 
 void tests() {
+    {
 //    tcp_server();
-
 //    reuse_addr();
+//        buf_size();
 
-    buf_size();
+//        reuse_port();
+//        reuse_port_multi_process();
+    }
 
-    reuse_port();
-    reuse_port_multi_process();
+    select_tcp_server();
 }
 
 }
