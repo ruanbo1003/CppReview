@@ -17,6 +17,7 @@
 #include "libs/head.h"
 #include "templates/head.h"
 #include "nets/head.h"
+#include "optimize/head.h"
 
 
 void entry() {
@@ -44,6 +45,9 @@ void entry() {
     nets::tests();
 
 //    libs();
+
+//    optimize::tests();
+
 }
 
 #endif //CPPREVIEW_MAIN_H

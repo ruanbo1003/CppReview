@@ -7,6 +7,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <strings.h>
+#include <fcntl.h>
 #include "comm/log.h"
 
 /*
@@ -29,6 +30,16 @@ static int reuse_port_tcp_listen(std::string process_name, std::string ip, int p
     if(sock_fd < 0) {
         Log("socket() failed:%d", errno);
         return -1;
+    }
+
+    // set non-blocking
+    {
+        int ret = fcntl(sock_fd, F_SETFL, O_NONBLOCK);
+        if(ret == -1) {
+            Log("fcntl(%d) failed", sock_fd);
+            close(sock_fd);
+            return -1;
+        }
     }
 
     // set socket option: SO_REUSEPORT
@@ -69,9 +80,17 @@ static int reuse_port_tcp_listen(std::string process_name, std::string ip, int p
         // wait for client
         struct sockaddr_in client_addr;
         socklen_t client_len = sizeof(client_addr);
+
+        // sock_fd is set to non-blocking, so the ::accept() will not block call.
         int conn_fd = ::accept(sock_fd, (struct sockaddr*)&client_addr, &client_len);
         if(conn_fd == -1) {
-            Log("[%s] accept failed:%d", process_name.c_str(), errno);
+            if(errno == EAGAIN) {
+                // if no new socket connection from client is ready for accept, the errno will be EAGAIN/EWOULDBLOCK
+                sleep(1);
+            } else {
+                Log("[%s] accept failed:%d", process_name.c_str(), errno);
+            }
+
             continue;
         }
 
