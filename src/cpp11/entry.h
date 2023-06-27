@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include "rvalue/head.h"
+#include "move/head.h"
+
 
 namespace cpp11 {
 
@@ -55,8 +57,10 @@ void tests() {
 
 //    literal_test();
 
-    rvalue::tests();
+//    rvalue::tests();
 
+    move_entry();
+    
     std::cout << "end of cpp11::tests()" << std::endl;
 }
 
