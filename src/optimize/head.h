@@ -7,8 +7,11 @@
 
 namespace optimize {
 
+void string_less_malloc();
 
 void tests() {
+
+    string_less_malloc();
 
 }
 
