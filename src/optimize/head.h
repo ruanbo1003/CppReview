@@ -8,10 +8,15 @@
 namespace optimize {
 
 void string_less_malloc();
+void vector_optimize();
+
+
 
 void tests() {
 
-    string_less_malloc();
+//    string_less_malloc();
+
+    vector_optimize();
 
 }
 

@@ -18,6 +18,8 @@
 #include "templates/head.h"
 #include "nets/head.h"
 #include "optimize/head.h"
+#include "systems/head.h"
+#include "processes/head.h"
 
 
 void entry() {
@@ -48,6 +50,9 @@ void entry() {
 
     optimize::tests();
 
+//    systems();
+
+//    processes::tests();
 }
 
 #endif //CPPREVIEW_MAIN_H
