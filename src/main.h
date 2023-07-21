@@ -25,9 +25,9 @@ void entry() {
 
     // modern C++
     {
-        cpp11::tests();
+//        cpp11::tests();
 //        cpp14::tests();
-//        cpp17::tests();
+        cpp17::tests();
     }
 
 //    templates::tests();

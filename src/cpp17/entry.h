@@ -15,6 +15,7 @@ void condition_initialize_test();
 void namespace_test();
 void fold_expr_test();
 void file_system_test();
+void struct_binding();
 
 
 void tests() {
@@ -28,8 +29,10 @@ void tests() {
 
 //    fold_expr_test();
 
-    file_system_test();
-
+//    file_system_test();
+    
+    struct_binding();
+    
     Log("end of c++ 17 test");
 }
 
